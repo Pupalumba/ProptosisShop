@@ -1,0 +1,217 @@
+<div class="more-actions-container clearfix">
+    <div>
+        <div class="left-circle"></div>
+
+        <div class="actions">
+            <button class="btn" type="submit" (click)="back()">
+                <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+                Back
+            </button>
+            <button class="btn" type="submit" (click)="create()">
+                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                Create
+            </button>
+
+        </div>
+
+        <div class="right-circle btn">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </div>
+    </div>
+
+</div>
+
+<div class="card clearfix">
+    <div class="card-title">
+        <h1 class="h1 title">Create new product</h1>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="form" >
+            <ngb-tabset>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>General</ng-template>
+                    <ng-template ngbTabContent>
+
+                        <div class="form-group">
+                            <label for="title">
+                                Title
+                                <span>*</span>
+                            </label>
+                            <input type="text" class="form-control" id="title"
+                                   formControlName="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">
+                                Description
+                                <span>*</span>
+                            </label>
+                            <textarea class="form-control" id="description"
+                                      formControlName="description" cols="30" rows="10">
+
+                            </textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sort-description">
+                                Sort description
+                            </label>
+                            <textarea class="form-control" id="sort-description"
+                                      formControlName="sortDescription" cols="30" rows="5">
+
+                            </textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                Attributes
+                            </label>
+                            <select2
+                                    [data]="['Cysts', 'Insomnia', 'Anaemia']"
+                                    [options]="options"
+                                    [value]="value"
+                                    (valueChanged)="getSelectValues($event, 'attributes')"
+                            ></select2>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Tags
+                            </label>
+                            <select2
+                                    [data]="['Red', 'Blue', 'Green']"
+                                    [options]="options"
+                                    [value]="value"
+                                    (valueChanged)="getSelectValues($event, 'tags')"
+                            ></select2>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="instock">
+                                Status
+                                <span>*</span>
+                            </label>
+
+                            <select class="form-control" name="status" id="status" formControlName="status">
+                                <option value="true">Enabled</option>
+                                <option value="false">Disabled</option>
+                            </select>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Categies</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="form-group">
+                            <label>
+                                Categories
+                            </label>
+                            <div class="form-group">
+                                <select2
+                                        [data]="categories"
+                                        [options]="options"
+                                        [value]="value"
+                                        (valueChanged)="getSelectValues($event, 'categories')"
+                                ></select2>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Images</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="form-group">
+                            <label for="images" class="custom-inputfile-label">
+                                {{uploader.queue.length === 0 ?
+                                'Choose file(s)' :
+                                (uploader.queue.length === 1 ? uploader.queue[0].file.name :  uploader.queue.length + ' files')}}
+                            </label>
+                            <input type="file" class="form-control custom-inputfile" id="images" ng2FileSelect [uploader]="uploader"
+                                   formControlName="gallery" multiple />
+
+                        </div>
+
+                        <div class="form-group" *ngIf="uploader.queue.length > 0">
+                            <div class="row">
+                                <div class="col-2" *ngFor="let image of uploader.queue; let i=index">
+                                    <label class="media" [ngClass]="{'active': highlight === i}">
+                                        <span class="mr-3 align-self-center">
+                                            <img [src]="filePreviewPath[i]" class="img-fluid">
+                                        </span>
+
+                                        <span class="media-body">
+                                            <input type="radio" name="highlight" (change)="setHighlightImage(i)"/>
+                                            <span class="radio-indicator media-action"></span>
+                                            <button class="media-action" type="button" (click)="removeItem(i)">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </button>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Prices</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="form-group">
+                            <label for="price">
+                                Price
+                                <span>*</span>
+                            </label>
+                            <input type="number" class="form-control" id="price" placeholder="0.00"
+                                   formControlName="price">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialPrice">
+                                Special Price
+                            </label>
+                            <input type="number" class="form-control" id="specialPrice" placeholder="0.00"
+                                   formControlName="specialPrice">
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="spStartDate">
+                                Special Price From Date
+                            </label>
+                            <input type="date" class="form-control" id="spStartDate" formControlName="spStartDate"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="spEndDate">
+                                Special Price to Date
+                            </label>
+                            <input type="date" class="form-control" id="spEndDate" formControlName="spEndDate"/>
+                        </div>
+
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Inventory</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="form-group">
+                            <label for="qty">
+                                Qty
+                                <span>*</span>
+                            </label>
+                            <input type="number" class="form-control" id="qty" formControlName="qty">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="instock">
+                                Stock Availability
+                                <span>*</span>
+                            </label>
+
+                            <select class="form-control" name="instock" id="instock" formControlName="instock">
+                                <option value="true">In stock</option>
+                                <option value="false">Out of stock</option>
+                            </select>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </form>
+    </div>
+</div>

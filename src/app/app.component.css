@@ -1,0 +1,12 @@
+html, body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif; }
+
+:host /deep/ admin {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  float: left;
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=app.component.css.map */

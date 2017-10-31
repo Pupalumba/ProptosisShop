@@ -1,0 +1,87 @@
+<header class="clearfix">
+    <div class="top-nav-left">
+        <button type="button" class="button-menu-mobile btn">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <div class="search">
+            <input class="search-field" placeholder="Search" type="text" />
+        </div>
+    </div>
+    <div class="top-nav-right">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="btn" [routerLink]="['/']">
+                    <iframe src="http://localhost:3000" width="39" height="39" frameborder="0"></iframe>
+                </a>
+            </li>
+            <li class="nav-item">
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn" id="notifications" ngbDropdownToggle>
+                        <i class="fa fa-bell-o" aria-hidden="true"></i>
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="notifications">
+                        <button class="dropdown-item">Action - 1</button>
+                        <button class="dropdown-item">Another Action</button>
+                        <button class="dropdown-item">Something else is here</button>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn" id="user-panel" ngbDropdownToggle>
+                        <i class="fa fa-bell-o" aria-hidden="true"></i>
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="user-panel">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Edit Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</header>
+<aside class="left-sidebar">
+    <div class="logo">
+        <h1 class="h1">
+            <a [routerLink]="['/admin/index']" class="btn-link" [ngClass]="{'active': isCollapsed === 0}" (click)="isCollapsed = 0" >TrashShop</a>
+        </h1>
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item" >
+            <a class="nav-link" [routerLink]="['/admin/index']" [ngClass]="{'active': isCollapsed === 0}" (click)="isCollapsed = 0">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" [ngClass]="{'opened': isCollapsed === 3}" (click)="isCollapsed = 3" [attr.aria-expanded]="isCollapsed === 3">Catalog</button>
+            <div class="menu-collapse" [ngbCollapse]="isCollapsed !== 3">
+                <ul class="nav flex-column">
+                    <li class="nav-item" >
+                        <a class="nav-link" [routerLink]="['/admin/index/products']" [routerLinkActive]="'active'">Products</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" [routerLink]="['/admin/index/categories']" [routerLinkActive]="'active'">Categories</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" [ngClass]="{'opened': isCollapsed === 4}" (click)="isCollapsed = 4" [attr.aria-expanded]="isCollapsed === 4">Sales</button>
+            <div class="menu-collapse" [ngbCollapse]="isCollapsed !== 4">
+                <ul class="nav flex-column">
+                    <li class="nav-item" >
+                        <a class="nav-link" [routerLink]="['/admin/index/products']" [routerLinkActive]="'active'">Orders</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</aside>
+<main>
+    <router-outlet></router-outlet>
+</main>
+<footer>
+    <div class="copyright">© 2017 <a class="btn-link" [routerLink]="['/admin/index']">Me</a>. All Rights Reserved.</div>
+</footer>

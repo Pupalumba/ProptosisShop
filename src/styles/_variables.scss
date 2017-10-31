@@ -1,0 +1,56 @@
+$nav-button-color: #00838F;
+$primaryColor: #563d7c;
+$secondaryColor: #333;
+$outColor: #3276b1;
+$whiteColor: #fff;
+
+$admin-space-top: 85px;
+$admin-space-bottom: 65px;
+$admin-space-left: 240px;
+
+@mixin box-shadow-bold() {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+}
+
+@mixin box-shadow-light() {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+@mixin logo-style{
+  font-family: 'Sedgwick Ave', cursive;
+  margin-top: 30px;
+}
+
+@mixin fancy-btn-white {
+  position: relative;
+  box-shadow: 0 2px 0 1px rgba(255, 255, 255, 0.36);
+  &:hover{
+    top: 1px;
+    box-shadow: 0 1px 0 1px rgba(255, 255, 255, 0.36);
+  }
+  &:focus{
+    top: 2px;
+    box-shadow: none
+  }
+}
+
+.position-relative{
+  position: relative;
+}
+
+.custom-control-indicator{
+  position: static;
+
+}
+
+.custom-control-input:focus ~ .custom-control-indicator {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px $primaryColor;
+}
+
+.custom-control-input:checked ~ .custom-control-indicator{
+  background-color: $primaryColor;
+}

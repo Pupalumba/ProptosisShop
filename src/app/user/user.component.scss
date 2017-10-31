@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+
+.login-container{
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -45%);
+  -moz-transform: translate(-50%, -45%);
+  -ms-transform: translate(-50%, -45%);
+  -o-transform: translate(-50%, -45%);
+  transform: translate(-50%, -45%);
+  width:400px;
+  .h1{
+   @include logo-style;
+  }
+}
+
+.action-group{
+  margin-top:25px;
+  a,button{
+    text-align: center;
+    display: block;
+    width:100%;
+  }
+}
+
+
+.homepage-redirect-link{
+  font-size: 12px;
+  margin-top:5px;
+  text-align: right;
+  a{
+    display: inline-block;
+  }
+}
+

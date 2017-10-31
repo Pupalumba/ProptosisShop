@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,KAAK;EACA,KAAK,EAAE,GAAG;EACX,MAAM,EAAE,IAAI;EACZ,YAAM;IACF,WAAW,EAAE,IAAI",
+"sources": ["post-detail.component.scss"],
+"names": [],
+"file": "post-detail.component.css"
+}

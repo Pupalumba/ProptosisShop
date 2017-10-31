@@ -1,0 +1,162 @@
+/* this file will be extracted to main dist folder and is imported in index.html */
+/* This file is for setting global styles  */
+@import 'variables';
+@import './bootsrtap/bootstrap.css';
+@import './bootsrtap/bootstrap-reboot.css';
+@import './bootsrtap/bootstrap-grid.css';
+@import './font-awesome/css/font-awesome.css';
+@import '../../node_modules/ng2-toastr/ng2-toastr.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+// NOTE: Theming is currently experimental and not yet publicly released!
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $secondaryColor;
+  font-size: 14px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $secondaryColor;
+  font-size: 14px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $secondaryColor;
+  font-size: 14px;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: $secondaryColor;
+  font-size: 14px;
+}
+
+textarea{
+  resize: none;
+}
+
+.btn-link{
+  color: $outColor;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+.btn{
+  background-color: $primaryColor;
+  color: $whiteColor;
+  cursor: pointer;
+  border-radius: 0;
+  transition: none;
+  font-size: 14px;
+}
+
+.btn:focus, .btn:active,.btn:hover{
+  background-color: $primaryColor;
+  color: $whiteColor;
+}
+
+.btn-link:hover, .btn-link:active, .btn-link:focus,
+.btn:hover, .btn:active, .btn:focus{
+  text-decoration: none;
+  outline: none;
+}
+
+.form-control, .select2-container .select2-selection{
+  border-radius: 0 !important;
+  color: $secondaryColor;
+  border-width: 1px !important;
+  border-color: #eee !important;
+}
+
+.form-control:focus,
+.select2-container.select2-container--open .select2-selection,
+.select2-container.select2-container--open .select2-dropdown
+{
+  outline: none;
+  box-shadow: none;
+  border-color: $primaryColor !important;
+  border-radius: 0 !important;
+}
+
+.select2-container {
+  .select2-selection {
+    .select2-selection__choice {
+      border-color: rgba(86, 61, 124, 0.4) !important;
+      background-color: rgba(86, 61, 124, 0.8) !important;
+      color: $whiteColor;
+    }
+
+    .select2-selection__choice__remove{
+      color: $whiteColor !important;
+    }
+  }
+}
+
+.card{
+  border: 1px solid #e7e7e7;
+  border-bottom-width: 2px;
+  .card-title{
+    padding:7px;
+    color: $whiteColor;
+    background-color: $primaryColor;
+    .title{
+      display: inline-block;
+      font-size: 18px;
+      margin:0;
+      padding: 2px;
+    }
+    .card-actions{
+      float: right;
+      a{
+        padding:2px 8px;
+      }
+      i{
+        margin-right:3px;
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+
+  // Helps fonts on OSX looks more consistent with other systems
+  // Isn't currently in button styles due to performance concerns
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  mat-sidenav {
+    min-width: 15%;
+
+    [mat-button] {
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      margin: 24px 0;
+    }
+  }
+
+  .demo-content {
+    padding: 32px;
+  }
+
+  .mat-toolbar {
+    background-color: $primaryColor;
+    color: $whiteColor;
+    mat-icon {
+      cursor: pointer;
+    }
+
+    .demo-toolbar {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  h1 {
+    .btn-link{
+      font-size: 42px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="login-container">
+            <div class="card">
+                <div class="card-title">
+                    <h1 class="h1 text-center">TrashShop</h1>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="form" (submit)="load()">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="user-name" formControlName="username" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="inputPassword" formControlName="password" placeholder="Password">
+                        </div>
+
+                        <div class="action-group form-group">
+                            <button class="btn mb-4" type="submit">
+                                Login
+                            </button>
+
+                            <div class="divider">
+                                <span>OR</span>
+                            </div>
+
+                            <a class="btn-link" [routerLink]="['/user/register']">
+                                Sign up
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="homepage-redirect-link">
+                <a class="btn-link" [routerLink]="['/']">Forgot your password?</a>
+            </div>
+        </div>
+    </div>
+</div>

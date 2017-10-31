@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI;EACF,YAAY,EAAC,CAAC;;AAGhB,UAAU;EACR,SAAS,EAAE,IAAI;;AAGjB,YAAY;EACV,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,KAAK",
+"sources": ["view-category.component.scss"],
+"names": [],
+"file": "view-category.component.css"
+}

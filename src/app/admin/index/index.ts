@@ -1,0 +1,1 @@
+export { PanelModule } from './admin.module';

@@ -1,0 +1,41 @@
+.position-relative {
+  position: relative; }
+
+.custom-control-indicator {
+  position: static; }
+
+.custom-control-input:focus ~ .custom-control-indicator {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px #563d7c; }
+
+.custom-control-input:checked ~ .custom-control-indicator {
+  background-color: #563d7c; }
+
+.login-container {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -45%);
+  -moz-transform: translate(-50%, -45%);
+  -ms-transform: translate(-50%, -45%);
+  -o-transform: translate(-50%, -45%);
+  transform: translate(-50%, -45%);
+  width: 400px; }
+  .login-container .h1 {
+    font-family: 'Sedgwick Ave', cursive;
+    margin-top: 30px; }
+
+.action-group {
+  margin-top: 25px; }
+  .action-group a, .action-group button {
+    text-align: center;
+    display: block;
+    width: 100%; }
+
+.homepage-redirect-link {
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: right; }
+  .homepage-redirect-link a {
+    display: inline-block; }
+
+/*# sourceMappingURL=user.component.css.map */

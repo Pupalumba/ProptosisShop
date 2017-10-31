@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="login-container">
+            <div class="card">
+                <div class="card-title">
+                    <h1 class="h1 text-center">TrashShop</h1>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="form" (submit)="save()">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="first-name" aria-describedby="emailHelp"
+                                   placeholder="First name" formControlName="firstname">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="last-name" aria-describedby="emailHelp"
+                                   placeholder="Last name" formControlName="lastname">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp"
+                                   placeholder="Username" formControlName="username">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="reInputPassword" placeholder="re password" formControlName="repassword">
+                        </div>
+
+                        <div class="action-group form-group">
+                            <button class="btn" type="submit">
+                                Sign up
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="homepage-redirect-link">
+                Already registered?
+                <a class="btn-link" [routerLink]="['/user']">
+                    Log in
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

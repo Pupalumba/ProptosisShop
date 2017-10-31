@@ -1,0 +1,13 @@
+<header>
+    <md-toolbar>
+        <a [routerLink]="['/']" class="logotTxt">MEAN</a>
+        <a class="links" [routerLink]="['/user']">Login</a>
+        <a class="links" [routerLink]="['/products']">Products</a>
+        <a class="links" [routerLink]="['/admin/index']">Admin panel</a>
+        <button class="links" (click)="logout()" *ngIf="bService.isAuthenticated()">Logout</button>
+    </md-toolbar>
+</header>
+<h1>this is site view</h1>
+<router-outlet></router-outlet>
+<footer>
+</footer>

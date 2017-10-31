@@ -1,0 +1,135 @@
+/* this file will be extracted to main dist folder and is imported in index.html */
+/* This file is for setting global styles  */
+@import url(./bootsrtap/bootstrap.css);
+@import url(./bootsrtap/bootstrap-reboot.css);
+@import url(./bootsrtap/bootstrap-grid.css);
+@import url(./font-awesome/css/font-awesome.css);
+@import url(../../node_modules/ng2-toastr/ng2-toastr.css);
+@import url(~@angular/material/prebuilt-themes/deeppurple-amber.css);
+.position-relative {
+  position: relative; }
+
+.custom-control-indicator {
+  position: static; }
+
+.custom-control-input:focus ~ .custom-control-indicator {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px #563d7c; }
+
+.custom-control-input:checked ~ .custom-control-indicator {
+  background-color: #563d7c; }
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #333;
+  font-size: 14px; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #333;
+  font-size: 14px; }
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #333;
+  font-size: 14px; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #333;
+  font-size: 14px; }
+
+textarea {
+  resize: none; }
+
+.btn-link {
+  color: #3276b1;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0;
+  font-size: 14px; }
+
+.btn {
+  background-color: #563d7c;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0;
+  transition: none;
+  font-size: 14px; }
+
+.btn:focus, .btn:active, .btn:hover {
+  background-color: #563d7c;
+  color: #fff; }
+
+.btn-link:hover, .btn-link:active, .btn-link:focus,
+.btn:hover, .btn:active, .btn:focus {
+  text-decoration: none;
+  outline: none; }
+
+.form-control, .select2-container .select2-selection {
+  border-radius: 0 !important;
+  color: #333;
+  border-width: 1px !important;
+  border-color: #eee !important; }
+
+.form-control:focus,
+.select2-container.select2-container--open .select2-selection,
+.select2-container.select2-container--open .select2-dropdown {
+  outline: none;
+  box-shadow: none;
+  border-color: #563d7c !important;
+  border-radius: 0 !important; }
+
+.select2-container .select2-selection .select2-selection__choice {
+  border-color: rgba(86, 61, 124, 0.4) !important;
+  background-color: rgba(86, 61, 124, 0.8) !important;
+  color: #fff; }
+.select2-container .select2-selection .select2-selection__choice__remove {
+  color: #fff !important; }
+
+.card {
+  border: 1px solid #e7e7e7;
+  border-bottom-width: 2px; }
+  .card .card-title {
+    padding: 7px;
+    color: #fff;
+    background-color: #563d7c; }
+    .card .card-title .title {
+      display: inline-block;
+      font-size: 18px;
+      margin: 0;
+      padding: 2px; }
+    .card .card-title .card-actions {
+      float: right; }
+      .card .card-title .card-actions a {
+        padding: 2px 8px; }
+      .card .card-title .card-actions i {
+        margin-right: 3px;
+        font-size: 11px; }
+
+body {
+  font-family: 'Montserrat', sans-serif; }
+  body * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  body mat-sidenav {
+    min-width: 15%; }
+    body mat-sidenav [mat-button] {
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      margin: 24px 0; }
+  body .demo-content {
+    padding: 32px; }
+  body .mat-toolbar {
+    background-color: #563d7c;
+    color: #fff; }
+    body .mat-toolbar mat-icon {
+      cursor: pointer; }
+    body .mat-toolbar .demo-toolbar {
+      display: flex;
+      justify-content: space-between;
+      width: 100%; }
+  body h1 .btn-link {
+    font-size: 42px; }
+
+/*# sourceMappingURL=styles.css.map */

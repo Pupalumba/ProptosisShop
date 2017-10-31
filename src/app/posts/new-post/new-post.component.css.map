@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,WAAW;EACP,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI",
+"sources": ["new-post.component.scss"],
+"names": [],
+"file": "new-post.component.css"
+}

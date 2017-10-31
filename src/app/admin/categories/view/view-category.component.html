@@ -1,0 +1,38 @@
+<div class="more-actions-container clearfix">
+    <div>
+        <div class="left-circle"></div>
+
+        <div class="actions">
+            <a class="btn" [routerLink]="['/admin/index/categories/create']">
+                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                Create
+            </a>
+        </div>
+
+        <div class="right-circle btn">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3" *ngFor="let category of categories;let i = index">
+        <div class="card"
+             [ngStyle]="{'background': 'url(/media/'+  category.images.gallery[0] +')',
+                        'background-size': 'cover',
+                        'background-position': 'center' }">
+
+            <div class="card-body">{{category.title}}
+                <a class="card-action" [routerLink]="['/admin/index/category/', category._id]">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+                <button class="card-action" (click)="delete(category._id)">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="card-footer">Products: {{category.products.length}}</div>
+        </div>
+    </div>
+</div>
+
+
